@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* Primary */
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+
+  /* Neutral */
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+
+  /* Font size */
+  --font-size: 15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: var(--Very-Light-Gray);
+  text-align: center;
+}
+
+.text-container {
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+.header-text {
+  font-weight: 200;
+  color: var(--Grayish-Blue);
+}
+
+.sub-header-text {
+  font-weight: 600;
+  color: var(--Very-Dark-Blue);
+  margin-bottom: 10px;
+}
+
+.header-description {
+  color: var(--Grayish-Blue);
+  font-size: var(--font-size);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.circle-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: repeat(7, minmax(10px, 1fr));
+  grid-template-areas:
+    '. block1 .'
+    '. block1 .'
+    'block4 block1 block2'
+    'block4 . block2'
+    'block4 block3 block2'
+    '. block3 .'
+    '. block3 .';
+  gap: 20px;
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  height: auto;
+  max-height: 90vh;
+  /* background-color: tomato; */
+}
+
+.circle-block {
+  /* background: white;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: clamp(15px, 2vw, 30px);
+  text-align: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px; */
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  padding: clamp(15px, 2vw, 30px);
+  text-align: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+  border-top: 4px solid;
+}
+
+.block-text p {
+  color: var(--Grayish-Blue);
+}
+
+.block-text h3 {
+  font-size: clamp(15px, 2.5vw, 24px);
+  color: var(--Very-Dark-Blue);
+}
+
+.block1 {
+  grid-area: block1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 4px solid var(--Red);
+}
+
+.block2 {
+  grid-area: block2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 4px solid var(--Blue);
+}
+
+.block3 {
+  grid-area: block3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 4px solid var(--Orange);
+}
+
+.block4 {
+  grid-area: block4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top: 4px solid var(--Cyan);
+}
+
+.block-middle {
+  grid-area: block-middle;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.icon {
+  width: clamp(40px, 5vw, 60px);
+  height: clamp(40px, 5vw, 60px);
+  align-self: flex-end;
+}
+
+.icon-img1 {
+  background-image: url('./images/icon-team-builder.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-img2 {
+  background-image: url('./images/icon-calculator.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-img3 {
+  background-image: url('./images/icon-karma.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon-img4 {
+  background-image: url('./images/icon-supervisor.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media screen and (max-width: 480px) {
+  .circle-container {
+    grid-template-columns: 1fr; /* Single column layout */
+    grid-template-rows: auto;
+    grid-template-areas:
+      'block1'
+      'block2'
+      'block3'
+      'block4';
+    gap: 15px; /* Reduce the gap between items */
+    max-width: 100%; /* Take full width on mobile */
+    height: auto;
+    padding: 20px;
+  }
+
+  .block1,
+  .block2,
+  .block3,
+  .block4 {
+    height: auto;
+    width: 100%;
+  }
+}
